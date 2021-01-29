@@ -1,9 +1,18 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include "bubble.h"
 
-void main(int argc, char **argv){
-  printf("There are %d arguments\n",argc-1);
-  int i;
-  for(i=1;i<argc;i++)
-    printf("argument#%d is %d\n",i, atoi(argv[i]));
+int main ()
+{
+    int *a,N;
+    printf ("How many number: ");
+    scanf ("%d",&N);
+    a =(int*)malloc(sizeof(int)*N);
+    for(int i=0;i<N;i++)
+    {
+        printf ("Enter %d number = ",i+1);
+        scanf ("%d",&a[i-1]);
+    }
+    bubble(a,N);
+    return 0;
 }
