@@ -20,14 +20,20 @@ void display(int value[], int N){
 void bubble(int a[], int N){
     int i;
     int j;
-    
-    for(j=0;j<N-1;j++){
+    int sorted;
+    for (i = N - 1; i > 0; i--)
+   {
+       sorted = 0;
+       for (j = 0; j < i; j++)
         if(a[j]>a[j+1]) // decending
+        {
             swap(&a[j],&a[j+1]);
+            sorted = 1;
+        }
+        if (sorted == 0) break;
+        printf ("\n");
         display(a,N);
     }
-    
-    
 }
 
 #endif /* bubble_h */
